@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hosea Varghese Kalayil</title>
+
+  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../dist/style.css" />
+  <script src="scripts/script.js"></script>
+  <script src="scripts/worksLoader.js"></script>
+  <script src="scripts/competencyLoader.js"></script>
+  <script src="scripts/expAndAcadLoader.js"></script>
+</head>
+
+<body id="docBody" class="bg-primary-900 text-body dark:bg-primary-dark-900 dark:text-body-dark"
+  onload="setTheme();loadWorks();loadCompetencies();loadExpAndAcad();">
+  <main class="font-body">
+    <div class="flex flex-col w-full md:flex-row">
+      <!-- Navbar -->
+      <nav id="sidebar"
+        class="flex flex-none flex-col justify-between w-full h-fit md:w-1/4 md:h-screen bg-sidebar dark:bg-sidebar-dark sticky top-0 left-0 z-30">
+        <!-- Brand -->
+        <div class="flex flex-col text-center justify-center w-full">
+          <img src="assets/logo.png" alt="HVK" class="m-auto w-14 2xl:w-20" />
+          <!-- Theme -->
+          <button class="btn-theme mobile-btn" onclick="toggleTheme()">
+            <svg id="lightIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+            <svg id="darkIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </button>
+          <h1 class="myName font-hero text-accent-900/80 my-2">
+            Hosea Varghese Kalayil
+          </h1>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex flex-row text-center justify-center w-full md:flex-col">
+          <!-- My Works -->
+          <button id="firstBtn" class="btn-primary" onclick="changePage('worksPage')">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <h2 class="ml-2 text-lg font-semibold hidden md:block">
+              My Works
+            </h2>
+          </button>
+
+          <!-- About Me -->
+          <button class="btn-primary" onclick="changePage('aboutPage')">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
+            </svg>
+            <h2 class="ml-2 text-lg font-semibold hidden md:block">
+              About Me
+            </h2>
+          </button>
+
+          <!-- Theme -->
+          <button id="big-theme-btn" class="btn-theme" onclick="toggleTheme()">
+            <svg id="lightIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+            <svg id="darkIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </button>
+        </div>
+        <div class="not-sr-only"></div>
+      </nav>
+
+      <!-- Body -->
+      <div
+        class="flex w-full h-screen md:w-3/4 bg-primary-900 dark:bg-primary-dark-900 overflow-visible overflow-x-hidden">
+
+        <!-- My Works -->
+        <div id="worksPage" class="body-container"></div>
+
+        <!-- About Me -->
+        <div id="aboutPage" class="body-container content-start">
+          <div class="about-card-container w-full h-fit p-4">
+            <div class="card h-fit">
+              <div class="flex flex-col md:flex-row">
+
+                <div class="flex-col w-full h-auto mb-2 md:h-fit md:w-1/3 md:mr-2">
+                  <img class="flex-col w-full h-auto mb-2 md:h-fit md:mr-2" src="assets/hvk.jpg" alt="HVK">
+                </div>
+
+                <div class="w-full">
+                  <div class="heading-details mb-2 w-full">
+                    <h1 class="flex-col text-2xl text-body dark:text-body-dark font-bold md:text-4xl tracking-wide">
+                      Hosea
+                      Varghese Kalayil
+                    </h1>
+                    <h4 class="flex-col text-xl text-body dark:text-body-dark font-bold md:text-2xl tracking-wide">
+                      Developer | TCS A&I</h4>
+                    <span id="exp" class="flex-col text-lg"></span>
+
+                  </div>
+                  <h6 class="flex-col text-xl mx-1">Competent Technologies</h6>
+                  <div id="competencyContainer" class="my-tech flex flex-row flex-wrap w-full">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Work Experience And Academics -->
+          <div class="flex flex-col md:flex-row w-full">
+
+            <div class="flex flex-col md:w-1/2">
+              <div class="about-card-container w-full h-fit p-4">
+                <div class="card h-fit">
+                  <div class="flex flex-col">
+                    <div class="flex flex-row justify-between items-end">
+                      <h1 class="text-xl font-bold md:text-2xl tracking-wide underline">Work Experience</h1>
+                      <a target="_blank" href="assets/cert/resume.pdf">
+
+                        <div
+                          class="flex flex-row justify-between items-end p-2 m-1 text-sm tracking-tighter bg-accent-0 border border-accent-100 rounded-md font-bold cursor-pointer hover:bg-accent-100 hover:scale-105 transition">
+                          <span class="hidden md:inline-block">Download &nbsp;</span> Resume
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </div>
+                      </a>
+ssa
+                    </div>
+
+                    <div id="workExperience" class="flex flex-col p-5">
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:w-1/2">
+              <div class="about-card-container w-full h-fit p-4">
+                <div class="card h-fit">
+                  <div class="flex flex-col">
+                    <div class="flex flex-row justify-between items-end">
+                      <h1 class="text-xl font-bold md:text-2xl tracking-wide underline">Academic Qualifications</h1>
+                      <!-- <a target="_blank" href="assets/cert/cv.pdf">
+
+                        <div
+                          class="flex flex-row justify-between items-end p-2 m-1 text-sm tracking-tighter bg-accent-0 border border-accent-100 rounded-md font-bold cursor-pointer hover:bg-accent-100 hover:scale-105 transition">
+
+                          <span class="hidden md:inline-block">Download &nbsp;</span> CV
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </div>
+                      </a> -->
+
+                    </div>
+
+                    <div id="academicQualifications" class="flex flex-col p-5">
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="flex flex-row justify-center pb-4 w-full">
+            <a href="https://wa.link/ba0u44" target="_blank" class="w-12 m-2 hover:scale-110">
+              <img src="assets/contact/whatsapp.png" alt="WhatsApp" title="Go to Whatsapp">
+            </a>
+            <a href="https://github.com/hvkalayil" target="_blank" class="w-12 m-2 hover:scale-110">
+              <img src="assets/contact/github.png" alt="GitHub" title="Go to GitHub">
+            </a>
+            <a href="https://teams.microsoft.com/l/chat/0/0?users=1924770@tcs.com" target="_blank" class="w-12 m-2 hover:scale-110">
+              <img src="assets/contact/teams.png" alt="Teams" title="Go to Teams">
+            </a>
+            <a href="https://www.hackerrank.com/hoseakalayil" target="_blank" class="w-12 m-2 hover:scale-110">
+              <img src="assets/contact/hackerrank.png" alt="HackerRank" title="Go to HackerRank">
+            </a>
+            <a href="https://www.linkedin.com/in/hosea-varghese-693503121/" target="_blank" class="w-12 m-2 hover:scale-110">
+              <img src="assets/contact/linkedin.png" alt="LinkedIn" title="Go to LinkedIn">
+            </a>
+          </div>
+
+          <div class="w-full text-sm font-thin tracking-tighter mx-1 pb-8 text-center">
+            (Icons by
+            <a class="underline cursor-pointer" target="_blank" href="https://iconscout.com/contributors/icon-mafia"> Icon Mafia </a>
+            and
+            <a class="underline cursor-pointer" target="_blank" href="https://iconscout.com/contributors/icon-54"> Icon 54 </a>
+            on
+            <a class="underline cursor-pointer" target="_blank" href="https://iconscout.com"> Iconscout </a>)
+          </div>
+
+
+        </div>
+      </div>
+  </main>
+</body>
+
+</html>
