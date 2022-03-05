@@ -18,22 +18,23 @@ function setTheme() {
 }
 
 function findExperience() {
-    const joiningDate = new Date(2021,10,07);
-    const today = Date.now()
-    const diff = Math.ceil(Math.abs(today - joiningDate) / (1000 * 60 * 60 * 24))
-    let expText = diff + ' days'
-    if(diff > 365){
-        const years = Math.floor(diff / 365).toFixed(1);
-        expText = years + 'Years'
-    }else{
-        if(diff > 30){
-            const months = Math.floor(diff / 30)
-            const ds = diff - (months * 30)
-            const daysText = ds != 0 ? ds + ' days ' : ''
-            expText = months + ' Months ' + daysText
-        }
+    const joiningDate = new Date('10/07/2021');
+    const today = new Date()
+    let months = (today.getFullYear() - joiningDate.getFullYear()) * 12
+    months -= joiningDate.getMonth()
+    months += today.getMonth()
+
+    let expText = `${months} months`
+    if (months > 11) {
+        let years = Math.floor(months / 12)
+
+        months = months - (years * 12)
+        months = Math.floor((months * 100) / 120)
+
+        expText = `${years}.${months} years`
     }
-    document.getElementById('exp').innerHTML = 'Experience: '+expText
+
+    document.getElementById('exp').innerHTML = 'Experience: ' + expText
 }
 
 function toggleTheme() {
@@ -63,15 +64,15 @@ function changePage(pageName) {
 
     nxt.classList.add('transit')
     setTimeout(() => {
-        nxt.style.opacity = 1 
+        nxt.style.opacity = 1
     }, 800);
     currentPage = pageName;
 }
 
-function showGif(obj){
-    obj.src = obj.src.replace('png','gif')
+function showGif(obj) {
+    obj.src = obj.src.replace('png', 'gif')
 }
 
-function hideGif(obj){
-    obj.src = obj.src.replace('gif','png')
+function hideGif(obj) {
+    obj.src = obj.src.replace('gif', 'png')
 }
