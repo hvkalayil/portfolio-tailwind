@@ -174,14 +174,6 @@ img{
   }
 }
 
-.moreDetailsPane {
-  display: none;
-}
-
-.closePaneIcon{
-  display: none;
-}
-
 .detailPaneUl{
   list-style: circle;
 }

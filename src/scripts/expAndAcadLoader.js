@@ -123,7 +123,7 @@ function loadData(type) {
                 <h4 class="font-bold"> ${item.second} </h4>
                 <h5> ${item.third} </h5>
 
-                <div id="${item.id}" class="flex flex-col w-full moreDetailsPane pl-4 py-4">
+                <div id="${item.id}" class="flex flex-col w-full pl-4 py-4" style="display:none">
                     ${item.body}
                 </div>
             </div>
