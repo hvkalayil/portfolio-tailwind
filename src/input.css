@@ -173,3 +173,20 @@ img{
     opacity: 1;
   }
 }
+
+.moreDetailsPane {
+  display: none;
+}
+
+.closePaneIcon{
+  display: none;
+}
+
+.detailPaneUl{
+  list-style: circle;
+}
+
+.detailPaneUl ::marker{
+  padding-left: 10px;
+  color: #2BC9ED;
+}
