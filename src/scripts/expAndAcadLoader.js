@@ -5,7 +5,7 @@ const experience = [
         second: 'Developer',
         third: '<time datetime="2021-10-07">October 7th, 2021</time> - Present',
         body:`
-        <h6 class="font-bold"> Mylan Data Management (<time datetime="2021-11-12">November, 2021</time> - Present) </h6>
+        <h6 class="font-bold"> Mylan Data Management (<time datetime="2021-10-21">October, 2021</time> - Present) </h6>
         <div class="pl-2 pt-2">
             <ul class="detailPaneUl">
                 <li> Technology Stack - <strong>Angular</strong>, <strong>Python</strong>, <strong>SQL Server</strong> and <strong>Azure Services.</strong> </li>
